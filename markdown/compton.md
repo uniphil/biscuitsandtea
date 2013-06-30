@@ -1,6 +1,6 @@
 My Compton command:
 ```bash
-compton -cCGbz --config /dev/null --shadow-exclude 'override_redirect ||
+compton -cCGbz --config /dev/null --shadow-exclude 'override_redirect || \
 class_g = "Synapse"' --backend glx
 ```
 

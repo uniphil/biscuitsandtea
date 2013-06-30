@@ -18,5 +18,5 @@ def post(postname):
             md = f.read()
     except IOError:
         abort(404)
-    html_content = markdown(md)
+    html_content = markdown(md, extensions=['codehilite', 'fenced_code'])
     return render_template("post.html", content=html_content)

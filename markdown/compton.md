@@ -1,7 +1,22 @@
-My Compton command:
+#My Compton command:
 ```bash
-compton -cCGbz --config /dev/null --shadow-exclude 'override_redirect || \
-class_g = "Synapse"' --backend glx
+compton -cCGbz --config /dev/null --shadow-exclude 'override_redirect || class_g = "Synapse"' --backend glx
+```
+
+
+```
+#!python
+@app.route("/posts/<postname>")
+def post(postname):
+    path = safe_join(app.config['POSTS_FOLDER'], postname + '.md')
+    print(path)
+    try:
+        with open(path) as f:
+            md = f.read()
+    except IOError:
+        abort(404)
+    html_content = markdown(md, extensions=['codehilite', 'fenced_code'])
+    return render_template("post.html", content=html_content)
 ```
 
 Breakdown of options:

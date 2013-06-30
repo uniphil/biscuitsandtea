@@ -3,9 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Jamie's pages{% endblock title %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/monokai.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/text.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
     </head>
     <body>
-        {% block content %}{% endblock content %}
+        <div id='paper'>
+            {% block content %}{% endblock content %}
+        </div>
+        
     </body>
 </html>

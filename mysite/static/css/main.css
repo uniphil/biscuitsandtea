@@ -14,13 +14,17 @@ body,
     text-shadow: 2px 2px 0 hsla(0, 0%, 0%, 0.7);
     color: #fff;
     margin: 0 auto;
-    width: 864px;
 }
 
-/*#paper,
-#blog-title {
-    margin-left: 1em;
-}*/
+img {
+    width: 46em;
+    border-radius: 3px;
+}
+
+#blog-title,
+#paper {
+    width: 54rem;
+}
 
 #paper,
 .codehilitetable,
@@ -35,7 +39,6 @@ body,
 
 #paper {
     background: #fff;
-    width: 54em;
     margin: 1em auto;
     padding: 2em 4em;
     border-top: 1px solid rgba(0,0,0,0);
@@ -44,7 +47,7 @@ body,
     box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.7);
     text-align: left;
     border-radius: 3px;
-
+    line-height: 18pt
 }
 
 .codehilite {
@@ -56,10 +59,10 @@ body,
 /* inline code styling */
 code {
     font-family: 'DejaVu Sans Mono';
-    font-size: 12px;
+    font-size: 11pt;
     border: 1px solid rgb(221, 221, 221);
-    display: inline-block;
-    vertical-align: middle;
+    display: inline;
+    vertical-align: top;
     background-color: rgb(248, 248, 248);
     border-radius: 3px;
 
@@ -75,14 +78,13 @@ code {
 
 .codehilitetable pre {
     margin: 0;
-
 }
 
 .codehilite {
     padding-left: 1em;
     padding-right: 1em;
     overflow: auto;
-    width: 47em;
+    width: 46em;
 }
 
 /* Top/bottom padding for code squares */

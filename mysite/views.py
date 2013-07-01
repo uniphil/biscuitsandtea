@@ -1,5 +1,5 @@
 #!/bin/python2
-from flask import render_template, safe_join, abort
+from flask import render_template, render_template_string, safe_join, abort
 from markdown import markdown
 from mysite import app
 from os import listdir
@@ -21,5 +21,16 @@ def post(postname):
             md = f.read()
     except IOError:
         abort(404)
+    md = render_template_string(md, MEDIA_URL=app.config['MEDIA_FOLDER'])
     html_content = markdown(md, extensions=['codehilite', 'fenced_code'])
+    # html_content = render_template_string(html_content, MEDIA_URL=app.config['MEDIA_FOLDER'])
     return render_template("post.html", content=html_content)
+
+
+@app.route(app.config['MEDIA_URL']+"<filename>")
+def media(filename):
+    try:
+        with open(safe_join(app.config['MEDIA_FOLDER'], filename)) as f:
+            return f.read()
+    except IOError:
+        abort(404)

@@ -1,2 +1,10 @@
 {% extends "base.html" %}
-{% block content %}test some content{% endblock content %}
+{% block content %}
+    <ul>
+    {% for post in post_list %}
+        <li>
+            <a href="{{url_for('post', postname=post)}}">{{post}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

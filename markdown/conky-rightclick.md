@@ -1,6 +1,6 @@
-HowTo make your Conkys transparent to your clicks. (event forwarding)
+#How to make Conkys forward click events
 
-Make sure you have the following lines in your conkyrc:
+Make sure you have the following line in your conkyrc:
 
 ```
 own_window_type override

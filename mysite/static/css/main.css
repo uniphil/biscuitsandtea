@@ -1,8 +1,26 @@
 body {
-    background: #272822;
     color: #272822;
     font-family: 'Open Sans', sans-serif;
 }
+
+body,
+.codehilite {
+    background: #272822 url('../img/darkdenim3.png') fixed;
+}
+
+#blog-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4em;
+    text-shadow: 2px 2px 0 hsla(0, 0%, 0%, 0.7);
+    color: #fff;
+    margin: 0 auto;
+    width: 864px;
+}
+
+/*#paper,
+#blog-title {
+    margin-left: 1em;
+}*/
 
 #paper,
 .codehilitetable,
@@ -23,16 +41,15 @@ body {
     border-top: 1px solid rgba(0,0,0,0);
     border-bottom: 1px solid rgba(0,0,0,0);
     border-width: 1px;
-    box-shadow: 0 0 1em rgba(0,0,0,0.7);
+    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.7);
     text-align: left;
     border-radius: 3px;
 
 }
 
 .codehilite {
-    background-color: #272822;
     color: #f8f8f2;
-    box-shadow: 0 0 1em rgba(0,0,0,0.7) inset;
+    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.2) inset;
     border-radius: 3px;
 }
 

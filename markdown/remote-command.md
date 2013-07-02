@@ -2,7 +2,7 @@
 (over ssh)
 
 ##Motivation:
-I was looking for a way to start up an X server on the media box without getting up off my local computer. I came across this program on another site, which I will link to when I find it again.
+I was looking for a way to start up an X server on the media box without getting up off my local computer. My housemate, [@uniphil](https://github.com/uniphil "His GitHub page") came across this program on another site, which I will link to when I find it again.
 
 ##The code:
 Download the C program [here]({{ url_for('media', filename='remote_command.c') }}){: download="remote_command.c" title="remote_command.c"}

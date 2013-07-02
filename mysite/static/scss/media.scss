@@ -1,0 +1,18 @@
+img {
+    width: 46em;
+    border-radius: 3px;
+    
+}
+
+.floatright {
+    width: inherit;
+    float: right;
+    clear: right;
+    margin: 0 0 1em 1em;
+    /*border: 10px;*/
+}
+
+.floatleft {
+    width: inherit;
+    float: left;
+}

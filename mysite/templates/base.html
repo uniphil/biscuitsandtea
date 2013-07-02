@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}biscuitsandtea weblog - A blog about Linux{% endblock title %}</title>
-        <link rel="shortcut icon" href="../static/img/favicon.ico">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico')}}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}"/>

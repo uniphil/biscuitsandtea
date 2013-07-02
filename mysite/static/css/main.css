@@ -11,6 +11,11 @@ body,
 a {
     color: rgb(65, 131, 196);
     text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 #blog-title {
@@ -19,6 +24,11 @@ a {
     text-shadow: 2px 2px 0 hsla(0, 0%, 0%, 0.7);
     margin: 0 auto;
 }
+
+#blog-title > a:focus {
+    outline: none;
+}
+
 #blog-title > a {
     color: #fff;
     text-decoration: none;

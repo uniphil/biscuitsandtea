@@ -8,6 +8,11 @@ body,
     background: #272822 url('../img/darkdenim3.png') fixed;
 }
 
+a {
+    color: rgb(65, 131, 196);
+    text-decoration: none;
+}
+
 #blog-title {
     font-family: 'Open Sans', sans-serif;
     font-size: 4em;

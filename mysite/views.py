@@ -24,7 +24,6 @@ def post(postname):
     md = render_template_string(md, MEDIA_URL=app.config['MEDIA_FOLDER'])
     html_content = markdown(md, extensions=['codehilite', 'fenced_code',
                                             'attr_list'])
-    # html_content = render_template_string(html_content, MEDIA_URL=app.config['MEDIA_FOLDER'])
     return render_template("post.html", content=html_content)
 
 

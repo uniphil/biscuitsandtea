@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <ul>
+    <ul id=home-post-list>
     {% for post in post_list %}
-        <li>
-            <a href="{{url_for('post', postname=post)}}">{{post}}</a>
-        </li>
+        <div class=paper>
+            <li>
+                <a href="{{url_for('post', postname=post)}}">{{post}}</a>
+            </li>
+        </div>
     {% endfor %}
     </ul>
 {% endblock content %}

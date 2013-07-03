@@ -1,51 +1,133 @@
-body {
-    color: #272822;
-    font-family: 'Open Sans', sans-serif;
-}
+$bg-colour: #272822;
+$bg-texture: url('../img/darkdenim3.png');
+$bg: $bg-colour $bg-texture fixed;
 
-body,
-.codehilite {
-    background: #272822 url('../img/darkdenim3.png') fixed;
+$link-colour: rgb(65, 131, 196);
+
+$main-font: 'Open Sans', sans-serif;
+$mono-font: 'DejaVu Sans Mono';
+$mono-size: 11pt;
+
+$mono-default-colour: #f8f8f2;
+
+$paper-width: 864px;
+$paper-lr-padding: 64px;
+$paper-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.3);
+
+$code-tb-padding: 0.5em;
+$code-shadow: $paper-shadow inset;
+
+$line-num-width: 2.5em;
+
+body {
+    color: $bg-colour;
+    font-family: $main-font;
+    background: $bg;
 }
 
 a {
-    color: rgb(65, 131, 196);
+    color: $link-colour;
     text-decoration: none;
     outline: 0;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-ul > .paper > li {
-    list-style-type: none;
-}
-
-ul {
-    padding: 0;
+    :hover {
+        text-decoration: underline;
+    }
 }
 
 #blog-title {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $main-font;
     font-size: 4em;
     text-shadow: 2px 2px 0 hsla(0, 0%, 0%, 0.7);
     margin: 0 auto;
+    width: $paper-width;
+    a {
+        color: #fff;
+        text-decoration: none;
+        :focus {
+            outline: none;
+        }
+    }
 }
 
-#blog-title > a:focus {
-    outline: none;
+#home-post-list {
+    padding: 0;
+    list-style-type: none;
 }
 
-#blog-title > a {
-    color: #fff;
-    text-decoration: none;
-}
-
-
-#blog-title,
+/* Paper element */
 .paper {
-    width: 54rem;
+    background: #fff;
+    width: $paper-width;
+    margin: 1em auto;
+    padding: 2em 4em;
+    // border: 1px 0 1px 0 solid rgba(0,0,0,0);
+    border-top: 1px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
+    box-shadow: $paper-shadow;
+    text-align: left;
+    border-radius: 3px;
+    line-height: 18pt
+}
+
+/* Inline code */
+code {
+    font-family: $mono-font;
+    font-size: 11pt;
+    border: 1px solid rgb(221, 221, 221);
+    display: inline;
+    vertical-align: top;
+    background-color: rgb(248, 248, 248);
+    border-radius: 3px;
+}
+
+/* Code blocks */
+.codehilite {
+    color: $mono-default-colour;
+    box-shadow: $code-shadow;
+    border-radius: 3px;
+    background: $bg;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow: auto;
+    width: 46em;
+    padding-top: $code-tb-padding;
+    padding-bottom: $code-tb-padding;
+    > pre {
+        font-family: $mono-font;
+        font-size: 11pt;
+        white-space: pre;
+        margin: 0;
+    }
+}
+
+/* Code table (line-numbered code block)
+   .codehilite styling still applies to code */
+.codehilitetable {
+    margin: 0em;
+    position: relative;
+    left: -$line-num-width;
+    .linenos {
+        border-right: 0px solid rgb(60, 60, 60);
+        height: auto;
+        color: hsl(0, 0%, 40%);
+        width: $line-num-width;
+        text-align: center;
+        /*background-color: rgb(255, 255, 255);*/
+        /*box-shadow: 3px 0px 3px -3px rgba(0, 0, 0, 0.8);*/
+        > .linenodiv {
+            padding-top: $code-tb-padding;
+            padding-bottom: $code-tb-padding;
+            > pre {
+                font-family: $mono-font;
+                font-size: 11pt;
+                white-space: pre;
+                margin: 0;
+            }
+        }
+    }
+    .code {
+        padding:0;
+    }
 }
 
 .paper,
@@ -57,106 +139,4 @@ ul {
     -o-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-}
-
-.paper {
-    background: #fff;
-    margin: 1em auto;
-    padding: 2em 4em;
-    border-top: 1px solid rgba(0,0,0,0);
-    border-bottom: 1px solid rgba(0,0,0,0);
-    border-width: 1px;
-    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.7);
-    text-align: left;
-    border-radius: 3px;
-    line-height: 18pt
-}
-
-.codehilite {
-    color: #f8f8f2;
-    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.2) inset;
-    border-radius: 3px;
-}
-
-/* inline code styling */
-code {
-    font-family: 'DejaVu Sans Mono';
-    font-size: 11pt;
-    border: 1px solid rgb(221, 221, 221);
-    display: inline;
-    vertical-align: top;
-    background-color: rgb(248, 248, 248);
-    border-radius: 3px;
-
-}
-
-.codehilite pre,
-.codehilitetable pre {
-    font-family: 'DejaVu Sans Mono';
-    font-size: 11pt;
-    white-space: pre;
-    /*overflow: auto;*/
-}
-
-.codehilitetable pre {
-    margin: 0;
-}
-
-.codehilite {
-    padding-left: 1em;
-    padding-right: 1em;
-    overflow: auto;
-    width: 46em;
-}
-
-/* Top/bottom padding for code squares */
-.codehilite,
-.linenodiv {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-/* zero margin */
-.codehilite > pre,
-.linenos > .linenodiv > pre {
-    margin: 0;
-    /*overflow: auto;*/
-}
-
-.codehilitetable {
-    margin: 0em;
-    position: relative;
-    left: -2.5em;
-}
-
-.codehilitetable,
-.codehilite {
-    margin: 1em 0;
-    /*border: 2px solid #333;*/
-    border-width: 1px 0;
-    /*width: 44em;*/
-}
-.codehilitetable .codehilite {
-    /*padding: 0;*/
-    margin: 0;
-    border-width: 0;
-    /*width: 41.5em;*/
-    overflow: auto;
-}
-.linenos {
-    border-right: 0px solid rgb(60, 60, 60);
-    /*padding-right: 0.9em;*/
-    height: auto;
-    color: hsl(0, 0%, 40%);
-    /*background-color: rgb(255, 255, 255);*/
-    /*box-shadow: 3px 0px 3px -3px rgba(0, 0, 0, 0.8);*/
-    width: 2.5em;
-    text-align: center;
-}
-
-.code > .codehilite {
-    box-shadow: 0 0 1em rgba(0,0,0,0.7) inset;
-}
-
-.code {
-    padding:0;
 }

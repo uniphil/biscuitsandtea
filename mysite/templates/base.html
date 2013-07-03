@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/monokai.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
     </head>
@@ -16,8 +17,6 @@
                 biscuitsandtea
             </a>
         </h1>
-        <div id="paper">
-            {% block content %}{% endblock content %}
-        </div>
+        {% block content %}{% endblock content %}
     </body>
 </html>

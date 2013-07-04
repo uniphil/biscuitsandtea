@@ -8,23 +8,21 @@ from os.path import isfile
 
 @app.route("/")
 def home():
-    post_list = [p[:-3] for p in listdir(app.config['POSTS_FOLDER'])]
-    return render_template("home.html", post_list=post_list)
+    posts = [open_markdown(p) for p in listdir(app.config['POSTS_FOLDER'])]
+    posts = [parse_markdown(p) for p in posts]
+    return render_template("home.html", posts=posts)
 
 
 @app.route("/posts/<postname>")
 def post(postname):
     path = safe_join(app.config['POSTS_FOLDER'], postname + '.md')
     print(path)
-    try:
-        with open(path) as f:
-            md = f.read()
-    except IOError:
+    md = open_markdown(postname + '.md')
+    if md == 404:
         abort(404)
-    md = render_template_string(md, MEDIA_URL=app.config['MEDIA_FOLDER'])
-    html_content = markdown(md, extensions=['codehilite', 'fenced_code',
-                                            'attr_list'])
-    return render_template("post.html", content=html_content)
+    else:
+        html_content = parse_markdown(md)
+        return render_template("post.html", content=html_content)
 
 
 @app.route(app.config['MEDIA_URL']+"<filename>")
@@ -34,3 +32,17 @@ def media(filename):
             return f.read()
     except IOError:
         abort(404)
+
+def open_markdown(filename):
+    path = safe_join(app.config['POSTS_FOLDER'], filename)
+    try:
+        with open(path) as f:
+            return f.read()
+    except IOError:
+        return 404
+
+def parse_markdown(md):
+    md = render_template_string(md, MEDIA_URL=app.config['MEDIA_FOLDER'])
+    html_content = markdown(md, extensions=['codehilite', 'fenced_code',
+                                            'attr_list'])
+    return html_content

@@ -12,9 +12,12 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
     </head>
     <body>
-        <h1 id="blog-title" title="A weblog about Linux">
-            <a href="{{url_for('home')}}">
+        <h1 id="blog-title">
+            <a href="{{url_for('home')}}" title="A weblog about Linux">
                 biscuitsandtea
+            </a>
+            <a href="https://github.com/jameh/biscuitsandtea" title="Fork me on Github!">
+                <img id="github-button" src="{{url_for('static', filename='img/github-10-64.png')}}">
             </a>
         </h1>
         {% block content %}{% endblock content %}

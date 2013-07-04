@@ -1,18 +1,21 @@
 img {
-    width: 46em;
+    // width: inherit;
+    // width: 46em;
     border-radius: 3px;
+    border-bottom: 1px;
     
 }
 
 .floatright {
-    width: inherit;
+    // width: inherit;
     float: right;
     clear: right;
     margin: 0 0 1em 1em;
+    border-bottom: 1px;
     /*border: 10px;*/
 }
 
 .floatleft {
-    width: inherit;
+    // width: inherit;
     float: left;
 }

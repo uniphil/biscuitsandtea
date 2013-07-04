@@ -1,0 +1,142 @@
+$bg-colour: #272822;
+$bg-texture: url('../img/darkdenim3.png');
+$bg: $bg-colour $bg-texture fixed;
+
+$link-colour: rgb(65, 131, 196);
+
+$main-font: 'Open Sans', sans-serif;
+$mono-font: 'DejaVu Sans Mono';
+$mono-size: 11pt;
+
+$mono-default-colour: #f8f8f2;
+
+$paper-width: 864px;
+$paper-lr-padding: 64px;
+$paper-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.3);
+
+$code-tb-padding: 0.5em;
+$code-shadow: $paper-shadow inset;
+
+$line-num-width: 2.5em;
+
+body {
+    color: $bg-colour;
+    font-family: $main-font;
+    background: $bg;
+}
+
+a {
+    color: $link-colour;
+    text-decoration: none;
+    outline: 0;
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+#blog-title {
+    font-family: $main-font;
+    font-size: 4em;
+    text-shadow: 2px 2px 0 hsla(0, 0%, 0%, 0.7);
+    margin: 0 auto;
+    width: $paper-width;
+    a {
+        color: #fff;
+        text-decoration: none;
+        :focus {
+            outline: none;
+        }
+    }
+}
+
+#home-post-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Paper element */
+.paper {
+    background: #fff;
+    width: $paper-width;
+    margin: 1em auto;
+    padding: 2em 4em;
+    // border: 1px 0 1px 0 solid rgba(0,0,0,0);
+    border-top: 1px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
+    box-shadow: $paper-shadow;
+    text-align: left;
+    border-radius: 3px;
+    line-height: 18pt
+}
+
+/* Inline code */
+code {
+    font-family: $mono-font;
+    font-size: 11pt;
+    border: 1px solid rgb(221, 221, 221);
+    display: inline;
+    vertical-align: top;
+    background-color: rgb(248, 248, 248);
+    border-radius: 3px;
+}
+
+/* Code blocks */
+.codehilite {
+    color: $mono-default-colour;
+    box-shadow: $code-shadow;
+    border-radius: 3px;
+    background: $bg;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow: auto;
+    width: 46em;
+    padding-top: $code-tb-padding;
+    padding-bottom: $code-tb-padding;
+    > pre {
+        font-family: $mono-font;
+        font-size: 11pt;
+        white-space: pre;
+        margin: 0;
+    }
+}
+
+/* Code table (line-numbered code block)
+   .codehilite styling still applies to code */
+.codehilitetable {
+    margin: 0em;
+    position: relative;
+    left: -$line-num-width;
+    .linenos {
+        border-right: 0px solid rgb(60, 60, 60);
+        height: auto;
+        color: hsl(0, 0%, 40%);
+        width: $line-num-width;
+        text-align: center;
+        /*background-color: rgb(255, 255, 255);*/
+        /*box-shadow: 3px 0px 3px -3px rgba(0, 0, 0, 0.8);*/
+        > .linenodiv {
+            padding-top: $code-tb-padding;
+            padding-bottom: $code-tb-padding;
+            > pre {
+                font-family: $mono-font;
+                font-size: 11pt;
+                white-space: pre;
+                margin: 0;
+            }
+        }
+    }
+    .code {
+        padding:0;
+    }
+}
+
+.paper,
+.codehilitetable,
+.codehilite,
+.linenos {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+}

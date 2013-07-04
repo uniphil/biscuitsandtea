@@ -5,6 +5,7 @@ from mysite import app
 from os import listdir
 from os.path import isfile
 
+from markdown.preprocessors import Preprocessor
 
 @app.route("/")
 def home():
@@ -44,5 +45,26 @@ def open_markdown(filename):
 def parse_markdown(md):
     md = render_template_string(md, MEDIA_URL=app.config['MEDIA_FOLDER'])
     html_content = markdown(md, extensions=['codehilite', 'fenced_code',
-                                            'attr_list'])
+                                            'attr_list', 'abbr'])
     return html_content
+
+
+class PreviewPreprocessor(Preprocessor):
+    def run(self, lines):
+        new_lines = []
+        pre = False
+        for line in lines:
+            if line.startswith("\%\%\%"):
+                if not pre:
+                    pre = True
+                else:
+                    pre = False
+                continue
+
+            if pre:
+                new_lines.append(line)
+        if not new_lines:
+            return lines
+        else:
+            return new_lines
+

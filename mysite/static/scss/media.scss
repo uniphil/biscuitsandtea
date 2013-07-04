@@ -1,3 +1,5 @@
+$float-margin: 0 0 1em 1em;
+
 img {
     // width: inherit;
     // width: 46em;
@@ -10,7 +12,7 @@ img {
     // width: inherit;
     float: right;
     clear: right;
-    margin: 0 0 1em 1em;
+    margin: $float-margin;
     border-bottom: 1px;
     /*border: 10px;*/
 }
@@ -18,4 +20,7 @@ img {
 .floatleft {
     // width: inherit;
     float: left;
+    clear: left;
+    margin: $float-margin;
+    border-bottom: 1px;
 }

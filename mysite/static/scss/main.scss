@@ -10,7 +10,7 @@ $mono-size: 11pt;
 
 $mono-default-colour: #f8f8f2;
 
-$paper-width: 864px;
+$paper-width: 880px;
 $paper-lr-padding: 64px;
 $paper-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.3);
 
@@ -92,7 +92,8 @@ code {
     padding-left: 1em;
     padding-right: 1em;
     overflow: auto;
-    width: 46em;
+    width: $paper-width - (2 * $paper-lr-padding);
+    // width: 46em;
     padding-top: $code-tb-padding;
     padding-bottom: $code-tb-padding;
     > pre {

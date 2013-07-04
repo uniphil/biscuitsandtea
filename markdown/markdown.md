@@ -78,18 +78,18 @@ You've probably noticed how pretty my code blocks are. That's thanks to these tw
 
 The syntax I like most for fenced code blocks is Github's triple backticks (ignore the leading spaces):
 
-```text
- ```
- var i = 0
- ```
+~~~markdown
+```javascript
+var i = 0
 ```
+~~~
 and \`single ticks\` for `inline code`
 
 [CodeHilite](http://pythonhosted.org/Markdown/extensions/code_hilite.html) uses the [Pygments](http://pygments.org/download/) package to parse the code blocks generating ugly HTML that can be styled with one of [these fantastic CSS sheets](https://github.com/richleland/pygments-css "Pygments CSS on Github"). The one I'm using right now is [monokai.css](https://github.com/richleland/pygments-css/blob/master/monokai.css).
 
 To specify what language to parse the code as, it's this simple (again, ignore leading space before backticks):
+~~~markdown
 ```python
- ```python
 def sing(n=0):
     if n < 3:
         print("row", end="")
@@ -115,8 +115,8 @@ def sing(n=0):
     sing(n+1)
 
 sing()
- ```
 ```
+~~~
 
 ###Third Party Extensions
 A list of third party extensions is kept up-to-date [here](https://github.com/waylan/Python-Markdown/wiki/Third-Party-Extensions)

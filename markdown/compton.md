@@ -1,8 +1,11 @@
+%%%
 #My Compton command:
+Compton my compositor of choice. It adds simple elegance to a window manager like Openbox.
 ```bash
 compton -cCGbz --config /dev/null --shadow-exclude 'override_redirect \
 || class_g = "Synapse"' --backend glx
 ```
+%%%
 
 Breakdown of options:
 `-c`:

@@ -1,3 +1,4 @@
+%%%
 #My Python-Markdown + extensions setup
 
 For the basic syntax of the language, see John Gruber's [original post](http://daringfireball.net/projects/markdown/syntax){: title="Original markdown specification at daringfireball.net" }
@@ -7,6 +8,7 @@ If you don't have [pip](https://pypi.python.org/pypi/pip), or [easy_install](htt
 ```bash
 sudo pip install markdown
 ```
+%%%
 Alternative installation methods are described [here](http://pythonhosted.org/Markdown/install.html).
 
 ##Use it

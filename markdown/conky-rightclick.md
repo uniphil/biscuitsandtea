@@ -1,3 +1,4 @@
+%%%
 #How to make Conkys forward click events
 
 Make sure you have the following line in your conkyrc:
@@ -7,6 +8,7 @@ own_window_type override
 ```
 The 'Override-Redirect' window type redirects all events to the window's parent
 (in my case, the root window/desktop).
+%%%
 
 ![A picture of a transparent desktop Conky with drop shadows]({{ url_for('media', filename='conky_with_shadow.png' )}}){: title="Conky with shadow" class="floatright"}
 ![A picture of a transparent desktop Conky without drop shadows]({{ url_for('media', filename='conky_without_shadow.png' )}}){: title="Conky without shadow" class="floatright"}

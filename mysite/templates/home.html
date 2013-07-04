@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <ul id=home-post-list>
-    {% for post in posts %}
+    {% for postname in previews %}
         <div class=paper>
             <li>
-                {{ post | safe }}
+                {{ previews[postname] | safe }}
+                <p>
+                    <a href="{{ url_for('post', postname=postname) }}">see more...</a>
+                </p>
             </li>
         </div>
     {% endfor %}
